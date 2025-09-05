@@ -1,5 +1,5 @@
 // js/app.js
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw18QTSPXMYS4YojiodUvOryr4PVAxSkqErbTkAmXH7L9ih-ArkLtL5X9pJyuYATHaXFA/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyrR8S7MF35c3nWyIsDyfTVzMQv1bbe7Okc66pMc8traG6CRdVLvquR_AEb0ae-f2NHDA/exec";
 
 const form = document.getElementById('privacyForm');
 const statusEl = document.getElementById('formStatus');
