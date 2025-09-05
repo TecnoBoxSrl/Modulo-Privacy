@@ -2,53 +2,63 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-<meta name="informativa-version" content="v2025-09-05">
-
+  <meta name="informativa-version" content="v2025-09-05">
   <title>Modulo Privacy – Tecno Box</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-<section class="notice">
-  <p>
-    Leggi l'<strong>Informativa Privacy completa</strong> prima di procedere:
-    <a href="./assets/informativa/Privacy%20Tecnobox%202025%20editabile.pdf" target="_blank" rel="noopener">
-      Scarica “Privacy Tecnobox 2025 editabile.pdf”
-    </a>
-  </p>
-</section>
+  <section class="notice">
+    <p>
+      Leggi l'<strong>Informativa Privacy completa</strong> prima di procedere:
+      <a href="./assets/informativa/Privacy%20Tecnobox%202025%20editabile.pdf" target="_blank" rel="noopener">
+        Scarica “Privacy Tecnobox 2025 editabile.pdf”
+      </a>
+    </p>
+  </section>
 
   <h1>Modulo Privacy – Compilazione Online</h1>
-<form id="privacyForm"
-      action="https://script.google.com/macros/s/AKfycbyrR8S7MF35c3nWyIsDyfTVzMQv1bbe7Okc66pMc8traG6CRdVLvquR_AEb0ae-f2NHDA/exec"
-      method="POST">
-<input type="hidden" name="informativa_version" id="informativa_version">
-<input type="hidden" name="userAgent" id="userAgent">
-    <label>Ragione sociale<input name="ragione_sociale" required></label><br>
-    <label>PEC<input name="pec" type="email"></label><br>
-    <label><input type="checkbox" name="consenso_trattamento" required> Consenso trattamento (obbligatorio)</label><br>
-    <label><input type="checkbox" name="consenso_marketing"> Consenso marketing</label><br>
+
+  <form id="privacyForm"
+        action="https://script.google.com/macros/s/AKfycbyrR8S7MF35c3nWyIsDyfTVzMQv1bbe7Okc66pMc8traG6CRdVLvquR_AEb0ae-f2NHDA/exec"
+        method="POST">
+    <input type="hidden" name="informativa_version" id="informativa_version">
+    <input type="hidden" name="userAgent" id="userAgent">
+
+    <label>Ragione sociale
+      <input name="ragione_sociale" required>
+    </label><br>
+
+    <label>PEC
+      <input name="pec" type="email">
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="consenso_trattamento" required>
+      Consenso trattamento (obbligatorio)
+    </label><br>
+
+    <label>
+      <input type="checkbox" name="consenso_marketing">
+      Consenso marketing
+    </label><br>
+
     <button type="submit">Invia</button>
-
-
   </form>
-  <output id="formStatus"></output>
- 
-<script>
-  // versione informativa (per i log)
-  document.getElementById('informativa_version').value =
-    document.querySelector('meta[name="informativa-version"]')?.content || 'v-unknown';
-  // user-agent (per audit trail)
-  document.getElementById('userAgent').value = navigator.userAgent || '';
 
-  // validazione minima client-side
-  document.getElementById('privacyForm').addEventListener('submit', function(e){
-    const rs = this.querySelector('[name="ragione_sociale"]')?.value?.trim();
-    const ct = this.querySelector('[name="consenso_trattamento"]')?.checked;
-    if(!rs){ alert('Compila la ragione sociale / nome e cognome.'); e.preventDefault(); }
-    else if(!ct){ alert('Devi accettare il trattamento per finalità contrattuali (obbligatorio).'); e.preventDefault(); }
-  });
-</script>
+  <script>
+    // Popola metadati per audit (letti dal backend)
+    document.getElementById('informativa_version').value =
+      document.querySelector('meta[name="informativa-version"]')?.content || 'v-unknown';
+    document.getElementById('userAgent').value = navigator.userAgent || '';
 
+    // Validazione minima
+    document.getElementById('privacyForm').addEventListener('submit', function(e){
+      const rs = this.querySelector('[name="ragione_sociale"]')?.value?.trim();
+      const ct = this.querySelector('[name="consenso_trattamento"]')?.checked;
+      if(!rs){ alert('Compila la ragione sociale / nome e cognome.'); e.preventDefault(); }
+      else if(!ct){ alert('Devi accettare il trattamento per finalità contrattuali (obbligatorio).'); e.preventDefault(); }
+    });
+  </script>
 </body>
 </html>
