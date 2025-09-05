@@ -28,8 +28,27 @@
     <label><input type="checkbox" name="consenso_trattamento" required> Consenso trattamento (obbligatorio)</label><br>
     <label><input type="checkbox" name="consenso_marketing"> Consenso marketing</label><br>
     <button type="submit">Invia</button>
+<input type="hidden" name="informativa_version" id="informativa_version">
+<input type="hidden" name="userAgent" id="userAgent">
+
   </form>
   <output id="formStatus"></output>
   <script src="./js/app.js"></script>
+<script>
+  // versione informativa (per i log)
+  document.getElementById('informativa_version').value =
+    document.querySelector('meta[name="informativa-version"]')?.content || 'v-unknown';
+  // user-agent (per audit trail)
+  document.getElementById('userAgent').value = navigator.userAgent || '';
+
+  // validazione minima client-side
+  document.getElementById('privacyForm').addEventListener('submit', function(e){
+    const rs = this.querySelector('[name="ragione_sociale"]')?.value?.trim();
+    const ct = this.querySelector('[name="consenso_trattamento"]')?.checked;
+    if(!rs){ alert('Compila la ragione sociale / nome e cognome.'); e.preventDefault(); }
+    else if(!ct){ alert('Devi accettare il trattamento per finalità contrattuali (obbligatorio).'); e.preventDefault(); }
+  });
+</script>
+
 </body>
 </html>
