@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Modulo Privacy – Tecno Box</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <h1>Modulo Privacy – Compilazione Online</h1>
+  <form id="privacyForm">
+    <label>Ragione sociale<input name="ragione_sociale" required></label><br>
+    <label>PEC<input name="pec" type="email"></label><br>
+    <label><input type="checkbox" name="consenso_trattamento" required> Consenso trattamento (obbligatorio)</label><br>
+    <label><input type="checkbox" name="consenso_marketing"> Consenso marketing</label><br>
+    <button type="submit">Invia</button>
+  </form>
+  <output id="formStatus"></output>
+  <script src="./js/app.js"></script>
+</body>
+</html>
