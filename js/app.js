@@ -1,4 +1,4 @@
-const WEB_APP_URL = "PASTE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz5ueIjPlyvdskd9j0u_NZfBQj1yiruieQsL_ExTIRc3txFjlM4HWSv59vjoDKUU65JzA/exec";
 const form = document.getElementById('privacyForm');
 const statusEl = document.getElementById('formStatus');
 form.addEventListener('submit', async (e)=>{
