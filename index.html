@@ -22,14 +22,14 @@
 <form id="privacyForm"
       action="https://script.google.com/macros/s/AKfycbyrR8S7MF35c3nWyIsDyfTVzMQv1bbe7Okc66pMc8traG6CRdVLvquR_AEb0ae-f2NHDA/exec"
       method="POST">
-
+<input type="hidden" name="informativa_version" id="informativa_version">
+<input type="hidden" name="userAgent" id="userAgent">
     <label>Ragione sociale<input name="ragione_sociale" required></label><br>
     <label>PEC<input name="pec" type="email"></label><br>
     <label><input type="checkbox" name="consenso_trattamento" required> Consenso trattamento (obbligatorio)</label><br>
     <label><input type="checkbox" name="consenso_marketing"> Consenso marketing</label><br>
     <button type="submit">Invia</button>
-<input type="hidden" name="informativa_version" id="informativa_version">
-<input type="hidden" name="userAgent" id="userAgent">
+
 
   </form>
   <output id="formStatus"></output>
